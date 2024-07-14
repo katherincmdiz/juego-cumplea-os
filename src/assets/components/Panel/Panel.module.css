@@ -1,0 +1,30 @@
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+}
+
+.panel button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  width: 180px;
+  background-color: #003347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.panel button:hover {
+  background-color: #fff;
+  color: #003347;
+  transform: scale(1.2);
+  transition: 0.5s;
+  border: 2px solid #003347;
+}
+
+
+

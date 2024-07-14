@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #f0f0f0);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  color: white;
+}
+.lives {
+  left: 100px;
+}
+
+.bullet {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+
+.gameOver {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: red;
+  text-align: center;
+}
