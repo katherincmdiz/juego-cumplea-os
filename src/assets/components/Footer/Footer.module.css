@@ -7,7 +7,7 @@
     gap: 25px;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 0;
-    z-index: 10; /* Para asegurarse de que esté sobre el contenido */
+   /* z-index: 10;*/ /* Para asegurarse de que esté sobre el contenido */
   }
   
   /* Media query para mostrar footer solo en dispositivos móviles */
