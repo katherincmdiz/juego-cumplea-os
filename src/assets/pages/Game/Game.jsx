@@ -3,7 +3,7 @@ import styles from './Game.module.css';
 import Player from '../../components/Player/Player';
 import Enemigo from '../../components/Enemigo/Enemigo';
 import bulletImage from '../../../../public/img/icono-favorito.png';
-import Footer from '../../components/Footer/Footer'; // Importa el componente Footer
+import Footer from '../../components/Footer/Footer';
 
 const Game = () => {
   const [playerPos, setPlayerPos] = useState({ x: 100, y: 0 });
@@ -76,35 +76,25 @@ const Game = () => {
     return () => clearInterval(interval);
   }, [bullets, enemies, score]);
 
-  const handleTouchStart = (direction) => {
-    if (direction === 'left') {
-      setPlayerPos(pos => ({ ...pos, x: pos.x - 10 }));
-    } else if (direction === 'right') {
-      setPlayerPos(pos => ({ ...pos, x: pos.x + 10 }));
-    }
-  };
-
   return (
-    <div className={styles.container}>
-      <Player x={playerPos.x} y={playerPos.y} />
-      {enemies.map(enemy => (
-        <Enemigo key={enemy.id} x={enemy.x} y={enemy.y} />
-      ))}
-      {bullets.map(bullet => (
-        <img
-          key={bullet.id}
-          src={bulletImage}
-          alt="Bullet"
-          className={styles.bullet}
-          style={{ left: bullet.x, top: bullet.y }}
-        />
-      ))}
-      <div className={styles.score}>Score: {score}</div>
-      <Footer
-        onLeft={() => handleTouchStart('left')}
-        onRight={() => handleTouchStart('right')}
-        onShoot={shoot}
-      />
+    <div>
+      <div className={styles.container}>
+        <Player x={playerPos.x} y={playerPos.y} />
+        {enemies.map(enemy => (
+          <Enemigo key={enemy.id} x={enemy.x} y={enemy.y} />
+        ))}
+        {bullets.map(bullet => (
+          <img
+            key={bullet.id}
+            src={bulletImage}
+            alt="Bullet"
+            className={styles.bullet}
+            style={{ left: bullet.x, top: bullet.y }}
+          />
+        ))}
+        <div className={styles.score}>Score: {score}</div>
+      </div>
+      <Footer onLeft={() => setPlayerPos(pos => ({ ...pos, x: pos.x - 10 }))} onRight={() => setPlayerPos(pos => ({ ...pos, x: pos.x + 10 }))} onShoot={shoot} />
     </div>
   );
 };

@@ -11,10 +11,10 @@ html, body, #root {
   background: linear-gradient(to bottom, #87ceeb, #f0f0f0);
 }
 
-#root {
+/*#root {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 
