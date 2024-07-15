@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Game.module.css';
 import Player from '../../components/Player/Player';
 import Enemigo from '../../components/Enemigo/Enemigo';
 import bulletImage from '../../../../public/img/icono-favorito.png';
+import Footer from '../../components/Footer/Footer'; // Importa el componente Footer
 
 const Game = () => {
   const [playerPos, setPlayerPos] = useState({ x: 100, y: 0 });
@@ -75,7 +76,13 @@ const Game = () => {
     return () => clearInterval(interval);
   }, [bullets, enemies, score]);
 
-
+  const handleTouchStart = (direction) => {
+    if (direction === 'left') {
+      setPlayerPos(pos => ({ ...pos, x: pos.x - 10 }));
+    } else if (direction === 'right') {
+      setPlayerPos(pos => ({ ...pos, x: pos.x + 10 }));
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -93,6 +100,11 @@ const Game = () => {
         />
       ))}
       <div className={styles.score}>Score: {score}</div>
+      <Footer
+        onLeft={() => handleTouchStart('left')}
+        onRight={() => handleTouchStart('right')}
+        onShoot={shoot}
+      />
     </div>
   );
 };
