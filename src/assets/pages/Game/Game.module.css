@@ -1,8 +1,8 @@
 .container {
   position: relative;
   width: 100%;
-  height: 100vh;
- /* height: calc(100vh - 60px); *//* Ajusta 60px al tamaño del footer */
+ height: 100vh;
+ /*height: calc(100vh - 60px);*/     /* Ajusta 60px al tamaño del footer */
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -27,6 +27,5 @@
 @media (max-width: 768px) {
   .container {
     height: calc(100vh - 60px); /* Ajusta 60px al tamaño del footer */
-
   }
 }
