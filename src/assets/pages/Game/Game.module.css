@@ -1,7 +1,8 @@
 .container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 60px); /* Ajusta 60px al tamaño del footer */
+  height: 100vh;
+ /* height: calc(100vh - 60px); *//* Ajusta 60px al tamaño del footer */
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -9,8 +10,8 @@
 
 .bullet {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 }
 
 .score {
